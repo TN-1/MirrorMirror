@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="greeting">
+        <h1>{{ greeting }}</h1>
+    </div>
+    <table id='container'>
+      <tr>
+        <td>
+          <svg id='clock' viewBox='0 0 100 100' width='200' height='200'>
+            <circle id='surface' cx='50' cy='50' r='45'/>
+            <g id='pointers'>
+              <line id='h_pointer' x1='50' y1='50' x2='50' y2='27' />
+              <line id='m_pointer' x1='50' y1='50' x2='50' y2='17' />
+              <line id='s_pointer' x1='50' y1='50' x2='50' y2='13' />
+            </g>
+            <g id='numbers'>
+              <text x='43' y='18'>12</text>
+              <text x='85' y='54'>3</text>
+              <text x='47' y='91'>6</text>
+              <text x='9' y='54'>9</text>
+            </g>
+          </svg>
+        </td>
+      </tr>
+    </table>
+    <div class="weather">
+        <center><i class="owf owf-{{ weather }} owf-5x"></i></center>
+        <p><b>The current temperature is {{ temp }} C</b></p>
+    </div>
+    <div class="calendar">
+    {% for event in events %}
+        <div class="day">
+            <h3>{{ event.day }}</h3>
+            <hr>
+            <h4>{{ event.name }}</h4>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

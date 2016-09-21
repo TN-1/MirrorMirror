@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="60">
+    <link rel="stylesheet" type="text/css" href="{% static 'Main/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Main/css/stylesheet.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Main/css/owfont-regular.css' %}">
+    <script type="text/javascript" src="{% static 'Main/javascript/ClockAnimate.js' %}"></script>
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+</head>
+<body class="content" onload='timerTick()'>
+{% block content %}
+{% endblock %}
+</body>
+</html>
